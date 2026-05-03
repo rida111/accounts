@@ -25,7 +25,8 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 
 /**
- * AAccountController: add, remove account
+ * AccountController: add, remove account
+ *
  */
 @RestController
 @RequestMapping(value = "/v1/api/bank/accounts")
