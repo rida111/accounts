@@ -24,6 +24,9 @@ import home.training.accounts.utils.AccountsConstants;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * AAccountController
+ */
 @RestController
 @RequestMapping(value = "/v1/api/bank/accounts")
 @Validated //telling sf to perform validations on all the REST endpoints inside this controller.
