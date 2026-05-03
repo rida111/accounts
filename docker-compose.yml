@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  accounts:
+    image: ridasfa1/accounts-ms:latest
+    container_name: c_accounts_ms
+    ports:
+      - "9090:9090"
+    mem_limit: 700m
+    networks:
+      - my-network  # Connects this container to the custom network
+
+  loans:
+    image: ridasfa1/loans-ms:1.0
+    container_name: c_loans_ms
+    ports:
+      - "9191:9191"
+    mem_limit: 700m
+    networks:
+      - my-network  # Connects this container to the custom network
+
+  cards:
+    image: ridasfa1/cards-ms:1.0
+    container_name: c_cards_ms
+    ports:
+      - "9292:9292"
+    mem_limit: 700m
+    networks:
+      - my-network  # Connects this container to the custom network
+
+# Define a custom network
+networks:
+  my-network:
+    driver: bridge  # Creates a custom bridge network
+
+# This configuration:
+# - Creates a custom bridge network called "my-network"
+# - Connects all 3 containers to the same network
+# - Enables internal communication using service names (accounts, loans, cards)
